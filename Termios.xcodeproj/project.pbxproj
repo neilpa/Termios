@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D86D5E361ABD1CFE00CA574D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */; };
-		D86D5E381ABD1CFE00CA574D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86D5E371ABD1CFE00CA574D /* Images.xcassets */; };
-		D86D5E3B1ABD1CFE00CA574D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86D5E391ABD1CFE00CA574D /* MainMenu.xib */; };
 		D86D5E4E1ABD1D2B00CA574D /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
 		D86D5E4F1ABD1D2B00CA574D /* Termios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D86D5E541ABD1D5800CA574D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E531ABD1D5800CA574D /* main.swift */; };
 		D8B4C5701ABD15DE00901386 /* Termios.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B4C56F1ABD15DE00901386 /* Termios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B4C57B1ABD15DE00901386 /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
 		D8B4C5821ABD15DE00901386 /* TermiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4C5811ABD15DE00901386 /* TermiosTests.swift */; };
@@ -52,9 +50,7 @@
 /* Begin PBXFileReference section */
 		D86D5E311ABD1CFE00CA574D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86D5E341ABD1CFE00CA574D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D86D5E371ABD1CFE00CA574D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D86D5E3A1ABD1CFE00CA574D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D86D5E531ABD1D5800CA574D /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D8B4C56A1ABD15DE00901386 /* Termios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Termios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4C56E1ABD15DE00901386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B4C56F1ABD15DE00901386 /* Termios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Termios.h; sourceTree = "<group>"; };
@@ -94,9 +90,7 @@
 		D86D5E321ABD1CFE00CA574D /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */,
-				D86D5E371ABD1CFE00CA574D /* Images.xcassets */,
-				D86D5E391ABD1CFE00CA574D /* MainMenu.xib */,
+				D86D5E531ABD1D5800CA574D /* main.swift */,
 				D86D5E331ABD1CFE00CA574D /* Supporting Files */,
 			);
 			path = Example;
@@ -279,8 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86D5E381ABD1CFE00CA574D /* Images.xcassets in Resources */,
-				D86D5E3B1ABD1CFE00CA574D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86D5E361ABD1CFE00CA574D /* AppDelegate.swift in Sources */,
+				D86D5E541ABD1D5800CA574D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,17 +331,6 @@
 			targetProxy = D8B4C57C1ABD15DE00901386 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D86D5E391ABD1CFE00CA574D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D86D5E3A1ABD1CFE00CA574D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D86D5E481ABD1CFF00CA574D /* Debug */ = {

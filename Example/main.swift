@@ -11,7 +11,10 @@ import Darwin.C.stdio
 
 println("Hello, World!")
 
-let raw = Termios()
+let old = Termios(fd: STDIN_FILENO)
+var new = old
+new.localFlags &= ~(.ECHO | .ICANON)
+new.update(STDIN_FILENO)
 
 let c = getchar()
 println("\(c)\r")

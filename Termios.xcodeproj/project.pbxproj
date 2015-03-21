@@ -16,6 +16,8 @@
 		D86D5E5C1ABD372D00CA574D /* ControlFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E5B1ABD372D00CA574D /* ControlFlags.swift */; };
 		D86D5E5E1ABD3AAB00CA574D /* ControlCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E5D1ABD3AAB00CA574D /* ControlCharacters.swift */; };
 		D86D5E601ABD3B5E00CA574D /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E5F1ABD3B5E00CA574D /* Speed.swift */; };
+		D89508931ABE0A1800B0BAAA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89508911ABE0A0900B0BAAA /* LlamaKit.framework */; };
+		D89508941ABE0A1C00B0BAAA /* LlamaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D89508911ABE0A0900B0BAAA /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8B4C5701ABD15DE00901386 /* Termios.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B4C56F1ABD15DE00901386 /* Termios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B4C57B1ABD15DE00901386 /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
 		D8B4C5821ABD15DE00901386 /* TermiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4C5811ABD15DE00901386 /* TermiosTests.swift */; };
@@ -51,6 +53,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D895088D1ABE09A400B0BAAA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D89508941ABE0A1C00B0BAAA /* LlamaKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +75,7 @@
 		D86D5E5B1ABD372D00CA574D /* ControlFlags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFlags.swift; sourceTree = "<group>"; };
 		D86D5E5D1ABD3AAB00CA574D /* ControlCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCharacters.swift; sourceTree = "<group>"; };
 		D86D5E5F1ABD3B5E00CA574D /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		D89508911ABE0A0900B0BAAA /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = "<group>"; };
 		D8B4C56A1ABD15DE00901386 /* Termios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Termios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4C56E1ABD15DE00901386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B4C56F1ABD15DE00901386 /* Termios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Termios.h; sourceTree = "<group>"; };
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89508931ABE0A1800B0BAAA /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +130,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D89508901ABE0A0900B0BAAA /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D89508911ABE0A0900B0BAAA /* LlamaKit.framework */,
+			);
+			name = External;
+			path = Carthage/Build/Mac;
+			sourceTree = "<group>";
+		};
 		D8B4C5601ABD15DE00901386 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +146,7 @@
 				D8B4C57E1ABD15DE00901386 /* TermiosTests */,
 				D86D5E321ABD1CFE00CA574D /* Example */,
 				D8B4C56B1ABD15DE00901386 /* Products */,
+				D89508901ABE0A0900B0BAAA /* External */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +242,7 @@
 				D8B4C5661ABD15DE00901386 /* Frameworks */,
 				D8B4C5671ABD15DE00901386 /* Headers */,
 				D8B4C5681ABD15DE00901386 /* Resources */,
+				D895088D1ABE09A400B0BAAA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -482,6 +507,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Termios/Info.plist;
 				INSTALL_PATH = "@rpath";
@@ -502,6 +531,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Termios/Info.plist;
 				INSTALL_PATH = "@rpath";
@@ -554,6 +587,7 @@
 				D86D5E491ABD1CFF00CA574D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8B4C5641ABD15DE00901386 /* Build configuration list for PBXProject "Termios" */ = {
 			isa = XCConfigurationList;

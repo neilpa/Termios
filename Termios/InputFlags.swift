@@ -29,45 +29,44 @@ public struct InputFlags : RawOptionSetType {
     }
 
     /// ignore BREAK condition
-    public static var IGNBRK: InputFlags { return self(UInt(Darwin.IGNBRK)) }
+    public static let IGNBRK = InputFlags(UInt(Darwin.IGNBRK))
 
     /// map BREAK to SIGINTR
-    public static var BRKINT: InputFlags { return self(UInt(Darwin.BRKINT)) }
+    public static let BRKINT = InputFlags(UInt(Darwin.BRKINT))
 
     /// ignore (discard) parity errors
-    public static var IGNPAR: InputFlags { return self(UInt(Darwin.IGNPAR)) }
+    public static let IGNPAR = InputFlags(UInt(Darwin.IGNPAR))
 
     /// mark parity and framing errors
-    public static var PARMRK: InputFlags { return self(UInt(Darwin.PARMRK)) }
+    public static let PARMRK = InputFlags(UInt(Darwin.PARMRK))
 
     /// enable checking of parity errors
-    public static var INPCK: InputFlags { return self(UInt(Darwin.INPCK)) }
+    public static let INPCK = InputFlags(UInt(Darwin.INPCK))
 
     /// strip 8th bit off chars
-    public static var ISTRIP: InputFlags { return self(UInt(Darwin.ISTRIP)) }
+    public static let ISTRIP = InputFlags(UInt(Darwin.ISTRIP))
 
     /// map NL into CR
-    public static var INLCR: InputFlags { return self(UInt(Darwin.INLCR)) }
+    public static let INLCR = InputFlags(UInt(Darwin.INLCR))
 
     /// ignore CR
-    public static var IGNCR: InputFlags { return self(UInt(Darwin.IGNCR)) }
+    public static let IGNCR = InputFlags(UInt(Darwin.IGNCR))
 
     /// map CR to NL (ala CRMOD)
-    public static var ICRNL: InputFlags { return self(UInt(Darwin.ICRNL)) }
+    public static let ICRNL = InputFlags(UInt(Darwin.ICRNL))
 
     /// enable output flow control
-    public static var IXON: InputFlags { return self(UInt(Darwin.IXON)) }
+    public static let IXON = InputFlags(UInt(Darwin.IXON))
 
     /// enable input flow control
-    public static var IXOFF: InputFlags { return self(UInt(Darwin.IXOFF)) }
+    public static let IXOFF = InputFlags(UInt(Darwin.IXOFF))
 
     /// any char will restart after stop
-    public static var IXANY: InputFlags { return self(UInt(Darwin.IXANY)) }
+    public static let IXANY = InputFlags(UInt(Darwin.IXANY))
 
     /// ring bell on input queue full
-    public static var IMAXBEL: InputFlags { return self(UInt(Darwin.IMAXBEL)) }
-    
-    /// maintain state for UTF-8 VERASE 
-    public static var IUTF8: InputFlags { return self(UInt(Darwin.IUTF8)) }
+    public static let IMAXBEL = InputFlags(UInt(Darwin.IMAXBEL))
 
+    /// maintain state for UTF-8 VERASE
+    public static let IUTF8 = InputFlags(UInt(Darwin.IUTF8))
 }

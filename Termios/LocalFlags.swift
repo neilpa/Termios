@@ -29,53 +29,53 @@ public struct LocalFlags : RawOptionSetType {
     }
 
     /// visual erase for line kill
-    public static var ECHOKE: LocalFlags { return self(UInt(Darwin.ECHOKE)) }
+    public static let ECHOKE = LocalFlags(UInt(Darwin.ECHOKE))
 
     /// visually erase chars
-    public static var ECHOE: LocalFlags { return self(UInt(Darwin.ECHOE)) }
+    public static let ECHOE = LocalFlags(UInt(Darwin.ECHOE))
 
     /// echo NL after line kill
-    public static var ECHOK: LocalFlags { return self(UInt(Darwin.ECHOK)) }
+    public static let ECHOK = LocalFlags(UInt(Darwin.ECHOK))
 
     /// enable echoing
-    public static var ECHO: LocalFlags { return self(UInt(Darwin.ECHO)) }
+    public static let ECHO = LocalFlags(UInt(Darwin.ECHO))
 
     /// echo NL even if ECHO is off
-    public static var ECHONL: LocalFlags { return self(UInt(Darwin.ECHONL)) }
+    public static let ECHONL = LocalFlags(UInt(Darwin.ECHONL))
 
     /// visual erase mode for hardcopy
-    public static var ECHOPRT: LocalFlags { return self(UInt(Darwin.ECHOPRT)) }
+    public static let ECHOPRT = LocalFlags(UInt(Darwin.ECHOPRT))
 
     /// echo control chars as ^(Char)
-    public static var ECHOCTL: LocalFlags { return self(UInt(Darwin.ECHOCTL)) }
+    public static let ECHOCTL = LocalFlags(UInt(Darwin.ECHOCTL))
 
     /// enable signals INTR, QUIT, [D]SUSP
-    public static var ISIG: LocalFlags { return self(UInt(Darwin.ISIG)) }
+    public static let ISIG = LocalFlags(UInt(Darwin.ISIG))
 
     /// canonicalize input lines
-    public static var ICANON: LocalFlags { return self(UInt(Darwin.ICANON)) }
+    public static let ICANON = LocalFlags(UInt(Darwin.ICANON))
 
     /// use alternate WERASE algorithm
-    public static var ALTWERASE: LocalFlags { return self(UInt(Darwin.ALTWERASE)) }
+    public static let ALTWERASE = LocalFlags(UInt(Darwin.ALTWERASE))
 
     /// enable DISCARD and LNEXT
-    public static var IEXTEN: LocalFlags { return self(UInt(Darwin.IEXTEN)) }
+    public static let IEXTEN = LocalFlags(UInt(Darwin.IEXTEN))
 
     /// external processing
-    public static var EXTPROC: LocalFlags { return self(UInt(Darwin.EXTPROC)) }
+    public static let EXTPROC = LocalFlags(UInt(Darwin.EXTPROC))
 
     /// stop background jobs from output
-    public static var TOSTOP: LocalFlags { return self(UInt(Darwin.TOSTOP)) }
+    public static let TOSTOP = LocalFlags(UInt(Darwin.TOSTOP))
 
     /// output being flushed (state)
-    public static var FLUSHO: LocalFlags { return self(UInt(Darwin.FLUSHO)) }
+    public static let FLUSHO = LocalFlags(UInt(Darwin.FLUSHO))
 
     /// no kernel output from VSTATUS
-    public static var NOKERNINFO: LocalFlags { return self(UInt(Darwin.NOKERNINFO)) }
-    
+    public static let NOKERNINFO = LocalFlags(UInt(Darwin.NOKERNINFO))
+
     /// XXX retype pending input (state)
-    public static var PENDIN: LocalFlags { return self(UInt(Darwin.PENDIN)) }
-    
+    public static let PENDIN = LocalFlags(UInt(Darwin.PENDIN))
+
     /// don't flush after interrupt
-    public static var NOFLSH: LocalFlags { return self(UInt(Darwin.NOFLSH)) }
+    public static let NOFLSH = LocalFlags(UInt(Darwin.NOFLSH))
 }

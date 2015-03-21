@@ -29,56 +29,56 @@ public struct ControlFlags : RawOptionSetType {
     }
 
     /// ignore control flags
-    public static var CIGNORE: ControlFlags { return self(UInt(Darwin.CIGNORE)) }
+    public static let CIGNORE = ControlFlags(UInt(Darwin.CIGNORE))
 
     /// character size mask
-    public static var CSIZE: ControlFlags { return self(UInt(Darwin.CSIZE)) }
+    public static let CSIZE = ControlFlags(UInt(Darwin.CSIZE))
 
     /// 5 bits (pseudo)
-    public static var CS5: ControlFlags { return self(UInt(Darwin.CS5)) }
+    public static let CS5 = ControlFlags(UInt(Darwin.CS5))
 
     /// 6 bits
-    public static var CS6: ControlFlags { return self(UInt(Darwin.CS6)) }
+    public static let CS6 = ControlFlags(UInt(Darwin.CS6))
 
     /// 7 bits
-    public static var CS7: ControlFlags { return self(UInt(Darwin.CS7)) }
+    public static let CS7 = ControlFlags(UInt(Darwin.CS7))
 
     /// 8 bits
-    public static var CS8: ControlFlags { return self(UInt(Darwin.CS8)) }
+    public static let CS8 = ControlFlags(UInt(Darwin.CS8))
 
     /// send 2 stop bits
-    public static var CSTOPB: ControlFlags { return self(UInt(Darwin.CSTOPB)) }
+    public static let CSTOPB = ControlFlags(UInt(Darwin.CSTOPB))
 
     /// enable receiver
-    public static var CREAD: ControlFlags { return self(UInt(Darwin.CREAD)) }
+    public static let CREAD = ControlFlags(UInt(Darwin.CREAD))
 
     /// parity enable
-    public static var PARENB: ControlFlags { return self(UInt(Darwin.PARENB)) }
+    public static let PARENB = ControlFlags(UInt(Darwin.PARENB))
 
     /// odd parity, else even
-    public static var PARODD: ControlFlags { return self(UInt(Darwin.PARODD)) }
+    public static let PARODD = ControlFlags(UInt(Darwin.PARODD))
 
     /// hang up on last close
-    public static var HUPCL: ControlFlags { return self(UInt(Darwin.HUPCL)) }
+    public static let HUPCL = ControlFlags(UInt(Darwin.HUPCL))
 
     /// ignore modem status lines
-    public static var CLOCAL: ControlFlags { return self(UInt(Darwin.CLOCAL)) }
+    public static let CLOCAL = ControlFlags(UInt(Darwin.CLOCAL))
 
     /// CTS flow control of output
-    public static var CCTS_OFLOW: ControlFlags { return self(UInt(Darwin.CCTS_OFLOW)) }
+    public static let CCTS_OFLOW = ControlFlags(UInt(Darwin.CCTS_OFLOW))
 
     /// RTS flow control of input
-    public static var CRTS_IFLOW: ControlFlags { return self(UInt(Darwin.CRTS_IFLOW)) }
+    public static let CRTS_IFLOW = ControlFlags(UInt(Darwin.CRTS_IFLOW))
 
     /// DTR flow control of input
-    public static var CDTR_IFLOW: ControlFlags { return self(UInt(Darwin.CDTR_IFLOW)) }
+    public static let CDTR_IFLOW = ControlFlags(UInt(Darwin.CDTR_IFLOW))
 
     /// DSR flow control of output
-    public static var CDSR_OFLOW: ControlFlags { return self(UInt(Darwin.CDSR_OFLOW)) }
+    public static let CDSR_OFLOW = ControlFlags(UInt(Darwin.CDSR_OFLOW))
 
     /// DCD flow control of output
-    public static var CCAR_OFLOW: ControlFlags { return self(UInt(Darwin.CCAR_OFLOW)) }
+    public static let CCAR_OFLOW = ControlFlags(UInt(Darwin.CCAR_OFLOW))
 
     /// old name for `CCAR_OFLOW`
-    public static var MDMBUF: ControlFlags { return self(UInt(Darwin.MDMBUF)) }
+    public static let MDMBUF = ControlFlags(UInt(Darwin.MDMBUF))
 }

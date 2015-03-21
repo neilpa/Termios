@@ -29,16 +29,16 @@ public struct OutputFlags : RawOptionSetType {
     }
 
     /// enable following output processing
-    public static var OPOST: OutputFlags { return self(UInt(Darwin.OPOST)) }
+    public static let OPOST = OutputFlags(UInt(Darwin.OPOST))
 
     /// map NL to CR-NL (ala CRMOD)
-    public static var ONLCR: OutputFlags { return self(UInt(Darwin.ONLCR)) }
+    public static let ONLCR = OutputFlags(UInt(Darwin.ONLCR))
 
     /// expand tabs to spaces
-    public static var OXTABS: OutputFlags { return self(UInt(Darwin.OXTABS)) }
+    public static let OXTABS = OutputFlags(UInt(Darwin.OXTABS))
 
     /// discard EOT's (^D) on output)
-    public static var ONOEOT: OutputFlags { return self(UInt(Darwin.ONOEOT)) }
+    public static let ONOEOT = OutputFlags(UInt(Darwin.ONOEOT))
 
     // TODO Should these be included?
     //

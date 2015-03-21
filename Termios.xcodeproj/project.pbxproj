@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D86D5E361ABD1CFE00CA574D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */; };
+		D86D5E381ABD1CFE00CA574D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86D5E371ABD1CFE00CA574D /* Images.xcassets */; };
+		D86D5E3B1ABD1CFE00CA574D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86D5E391ABD1CFE00CA574D /* MainMenu.xib */; };
+		D86D5E4E1ABD1D2B00CA574D /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
+		D86D5E4F1ABD1D2B00CA574D /* Termios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8B4C5701ABD15DE00901386 /* Termios.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B4C56F1ABD15DE00901386 /* Termios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B4C57B1ABD15DE00901386 /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
 		D8B4C5821ABD15DE00901386 /* TermiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4C5811ABD15DE00901386 /* TermiosTests.swift */; };
@@ -14,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D86D5E501ABD1D2B00CA574D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8B4C5611ABD15DE00901386 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8B4C5691ABD15DE00901386;
+			remoteInfo = Termios;
+		};
 		D8B4C57C1ABD15DE00901386 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D8B4C5611ABD15DE00901386 /* Project object */;
@@ -23,7 +35,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D86D5E521ABD1D2B00CA574D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D86D5E4F1ABD1D2B00CA574D /* Termios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D86D5E311ABD1CFE00CA574D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D86D5E341ABD1CFE00CA574D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D86D5E371ABD1CFE00CA574D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D86D5E3A1ABD1CFE00CA574D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D8B4C56A1ABD15DE00901386 /* Termios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Termios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4C56E1ABD15DE00901386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B4C56F1ABD15DE00901386 /* Termios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Termios.h; sourceTree = "<group>"; };
@@ -34,6 +65,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D86D5E2E1ABD1CFE00CA574D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D86D5E4E1ABD1D2B00CA574D /* Termios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8B4C5661ABD15DE00901386 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,11 +91,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D86D5E321ABD1CFE00CA574D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				D86D5E351ABD1CFE00CA574D /* AppDelegate.swift */,
+				D86D5E371ABD1CFE00CA574D /* Images.xcassets */,
+				D86D5E391ABD1CFE00CA574D /* MainMenu.xib */,
+				D86D5E331ABD1CFE00CA574D /* Supporting Files */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		D86D5E331ABD1CFE00CA574D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D86D5E341ABD1CFE00CA574D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D8B4C5601ABD15DE00901386 = {
 			isa = PBXGroup;
 			children = (
 				D8B4C56C1ABD15DE00901386 /* Termios */,
 				D8B4C57E1ABD15DE00901386 /* TermiosTests */,
+				D86D5E321ABD1CFE00CA574D /* Example */,
 				D8B4C56B1ABD15DE00901386 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +125,7 @@
 			children = (
 				D8B4C56A1ABD15DE00901386 /* Termios.framework */,
 				D8B4C57A1ABD15DE00901386 /* TermiosTests.xctest */,
+				D86D5E311ABD1CFE00CA574D /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +179,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D86D5E301ABD1CFE00CA574D /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D86D5E4C1ABD1CFF00CA574D /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				D86D5E2D1ABD1CFE00CA574D /* Sources */,
+				D86D5E2E1ABD1CFE00CA574D /* Frameworks */,
+				D86D5E2F1ABD1CFE00CA574D /* Resources */,
+				D86D5E521ABD1D2B00CA574D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D86D5E511ABD1D2B00CA574D /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = D86D5E311ABD1CFE00CA574D /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D8B4C5691ABD15DE00901386 /* Termios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8B4C5851ABD15DE00901386 /* Build configuration list for PBXNativeTarget "Termios" */;
@@ -164,6 +243,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Neil Pankey";
 				TargetAttributes = {
+					D86D5E301ABD1CFE00CA574D = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					D8B4C5691ABD15DE00901386 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -178,6 +260,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D8B4C5601ABD15DE00901386;
 			productRefGroup = D8B4C56B1ABD15DE00901386 /* Products */;
@@ -186,11 +269,21 @@
 			targets = (
 				D8B4C5691ABD15DE00901386 /* Termios */,
 				D8B4C5791ABD15DE00901386 /* TermiosTests */,
+				D86D5E301ABD1CFE00CA574D /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D86D5E2F1ABD1CFE00CA574D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D86D5E381ABD1CFE00CA574D /* Images.xcassets in Resources */,
+				D86D5E3B1ABD1CFE00CA574D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8B4C5681ABD15DE00901386 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +301,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D86D5E2D1ABD1CFE00CA574D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D86D5E361ABD1CFE00CA574D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8B4C5651ABD15DE00901386 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +328,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D86D5E511ABD1D2B00CA574D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8B4C5691ABD15DE00901386 /* Termios */;
+			targetProxy = D86D5E501ABD1D2B00CA574D /* PBXContainerItemProxy */;
+		};
 		D8B4C57D1ABD15DE00901386 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D8B4C5691ABD15DE00901386 /* Termios */;
@@ -234,7 +340,49 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D86D5E391ABD1CFE00CA574D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D86D5E3A1ABD1CFE00CA574D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		D86D5E481ABD1CFF00CA574D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D86D5E491ABD1CFF00CA574D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D8B4C5831ABD15DE00901386 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -323,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -342,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -392,6 +542,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D86D5E4C1ABD1CFF00CA574D /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D86D5E481ABD1CFF00CA574D /* Debug */,
+				D86D5E491ABD1CFF00CA574D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D8B4C5641ABD15DE00901386 /* Build configuration list for PBXProject "Termios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

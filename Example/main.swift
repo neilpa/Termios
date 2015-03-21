@@ -11,7 +11,7 @@ import Darwin.C.stdio
 
 println("Hello, World!")
 
-let old = Termios(fd: STDIN_FILENO)
+let old = Termios.fetch(STDIN_FILENO).value!
 var new = old
 new.localFlags &= ~(.ECHO | .ICANON)
 new.update(STDIN_FILENO)

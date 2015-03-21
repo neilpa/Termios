@@ -7,6 +7,7 @@
 //
 
 import Darwin.POSIX.termios
+import LlamaKit
 
 /// Swift wrapper around the raw C `termios` structure.
 public struct Termios {
@@ -14,11 +15,16 @@ public struct Termios {
 
     /// Constructs an empty `Termios` structure.
     public init() {
+        self.init(Darwin.termios())
     }
 
     /// Constructs a `Termios` structure from a given file descriptor `fd`.
-    public init(fd: Int32) {
-        tcgetattr(fd, &termios)
+    public static func fetch(fd: Int32) -> Result<Termios, errno_t> {
+        var termios = Darwin.termios()
+        switch(tcgetattr(fd, &termios)) {
+            case 0:  return success(Termios(termios))
+            default: return failure(errno)
+        }
     }
 
     // MARK: Properties
@@ -50,12 +56,20 @@ public struct Termios {
     // MARK: Operations
 
     /// Updates the file descriptor's `Termios` structure.
-    public mutating func update(fd: Int32) {
-        tcsetattr(fd, TCSANOW, &termios)
+    public mutating func update(fd: Int32) -> Result<(), errno_t> {
+        switch tcsetattr(fd, TCSANOW, &termios) {
+            case 0: return success(())
+            default: return failure(errno)
+        }
     }
 
     // MARK: Private
 
+    /// Wraps the `termios` structure.
+    private init(_ termios: Darwin.termios) {
+        self.termios = termios
+    }
+
     /// The wrapped termios struct.
-    private var termios = Darwin.termios()
+    private var termios: Darwin.termios
 }

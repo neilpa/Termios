@@ -15,14 +15,14 @@ public struct Termios {
 
     /// Constructs an empty `Termios` structure.
     public init() {
-        self.init(Darwin.termios())
+        self.init(termios())
     }
 
     /// Constructs a `Termios` structure from a given file descriptor `fd`.
     public static func fetch(fd: Int32) -> Result<Termios, errno_t> {
-        var termios = Darwin.termios()
-        switch(tcgetattr(fd, &termios)) {
-            case 0:  return success(Termios(termios))
+        var raw = termios()
+        switch(tcgetattr(fd, &raw)) {
+            case 0:  return success(Termios(raw))
             default: return failure(errno)
         }
     }
@@ -31,33 +31,33 @@ public struct Termios {
 
     /// Input flags
     public var inputFlags: InputFlags {
-        get { return InputFlags(termios.c_iflag) }
-        set { termios.c_iflag = newValue.rawValue }
+        get { return InputFlags(raw.c_iflag) }
+        set { raw.c_iflag = newValue.rawValue }
     }
 
     /// Output flags
     public var outputFlags: OutputFlags {
-        get { return OutputFlags(termios.c_oflag) }
-        set { termios.c_oflag = newValue.rawValue }
+        get { return OutputFlags(raw.c_oflag) }
+        set { raw.c_oflag = newValue.rawValue }
     }
 
     /// Control flags
     public var controlFlags: ControlFlags {
-        get { return ControlFlags(termios.c_cflag) }
-        set { termios.c_cflag = newValue.rawValue }
+        get { return ControlFlags(raw.c_cflag) }
+        set { raw.c_cflag = newValue.rawValue }
     }
 
     /// Local flags
     public var localFlags: LocalFlags {
-        get { return LocalFlags(termios.c_lflag) }
-        set { termios.c_lflag = newValue.rawValue }
+        get { return LocalFlags(raw.c_lflag) }
+        set { raw.c_lflag = newValue.rawValue }
     }
 
     // MARK: Operations
 
     /// Updates the file descriptor's `Termios` structure.
     public mutating func update(fd: Int32) -> Result<(), errno_t> {
-        switch tcsetattr(fd, TCSANOW, &termios) {
+        switch tcsetattr(fd, TCSANOW, &raw) {
             case 0: return success(())
             default: return failure(errno)
         }
@@ -67,9 +67,9 @@ public struct Termios {
 
     /// Wraps the `termios` structure.
     private init(_ termios: Darwin.termios) {
-        self.termios = termios
+        raw = termios
     }
 
     /// The wrapped termios struct.
-    private var termios: Darwin.termios
+    private var raw: termios
 }

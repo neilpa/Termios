@@ -39,4 +39,23 @@ public struct OutputFlags : RawOptionSetType {
 
     /// discard EOT's (^D) on output)
     public static var ONOEOT: OutputFlags { return self(Darwin.ONOEOT) }
+
+    // TODO Should these be included?
+    //
+    // The following block of features is unimplemented.  Use of these flags in
+    // programs will currently result in unexpected behaviour.
+    //
+    // - Begin unimplemented features
+    //
+    // var OCRNL: Int32 { get } /* map CR to NL on output */
+    // var ONOCR: Int32 { get } /* no CR output at column 0 */
+    // var ONLRET: Int32 { get } /* NL performs CR function */
+    // var OFILL: Int32 { get } /* use fill characters for delay */
+    // var NLDLY: Int32 { get } /* \n delay */
+    // var TABDLY: Int32 { get } /* horizontal tab delay */
+    // var CRDLY: Int32 { get } /* \r delay */
+    // var FFDLY: Int32 { get } /* form feed delay */
+    // var BSDLY: Int32 { get } /* \b delay */
+    // var VTDLY: Int32 { get } /* vertical tab delay */
+    // var OFDEL: Int32 { get } /* fill is DEL, else NUL */
 }

@@ -22,6 +22,30 @@ public struct Termios {
         tcgetattr(fd, &termios)
     }
 
+    /// Input flags
+    public var inputFlags: InputFlags {
+        get { return InputFlags(termios.c_iflag) }
+        set { termios.c_iflag = newValue.rawValue }
+    }
+
+    /// Output flags
+    public var outputFlags: OutputFlags {
+        get { return OutputFlags(termios.c_oflag) }
+        set { termios.c_oflag = newValue.rawValue }
+    }
+
+    /// Control flags
+    public var controlFlags: ControlFlags {
+        get { return ControlFlags(termios.c_cflag) }
+        set { termios.c_cflag = newValue.rawValue }
+    }
+
+    /// Local flags
+    public var localFlags: LocalFlags {
+        get { return LocalFlags(termios.c_lflag) }
+        set { termios.c_lflag = newValue.rawValue }
+    }
+
     /// The wrapped termios struct.
     private var termios = Darwin.termios()
 

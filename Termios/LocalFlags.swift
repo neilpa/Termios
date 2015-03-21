@@ -76,7 +76,6 @@ public struct LocalFlags : RawOptionSetType {
     /// XXX retype pending input (state)
     public static var PENDIN: LocalFlags { return self(UInt(Darwin.PENDIN)) }
     
-    // TODO Need to switch to UInt
-    //public static var NOFLSH:     UInt32 { get } /* don't flush after interrupt */
+    /// don't flush after interrupt
+    public static var NOFLSH: LocalFlags { return self(UInt(Darwin.NOFLSH)) }
 }
-

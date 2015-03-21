@@ -8,17 +8,24 @@
 
 import Darwin.POSIX.termios
 
-public final class Termios {
-    private var original = termios()
-    private var raw = termios()
+/// Swift wrapper around the raw C `termios` structure.
+public struct Termios {
 
-    public init () {
-        tcgetattr(STDIN_FILENO, &original)
-        cfmakeraw(&raw)
-        tcsetattr(STDIN_FILENO, TCSANOW, &raw)
+    /// Creates a wrapper around `stdout`.
+    public init() {
+        self.init(fd: STDOUT_FILENO)
     }
 
-    deinit {
-        tcsetattr(STDIN_FILENO, TCSANOW, &original)
+    /// Creates a wrapper around the given file descriptor.
+    public init(fd: Int32) {
+        self.fd = fd
+        tcgetattr(fd, &termios)
     }
+
+    /// The wrapped termios struct.
+    private var termios = Darwin.termios()
+
+    /// The corresponding file descriptor.
+    private let fd: Int32
+
 }

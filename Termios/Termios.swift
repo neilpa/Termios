@@ -51,11 +51,36 @@ public struct Termios {
         set { raw.c_lflag = newValue.rawValue }
     }
 
+    /// Input speed
+    public var inputSpeed: UInt {
+        return raw.c_ispeed
+    }
+
+    /// Output speed
+    public var outputSpeed: UInt {
+        return raw.c_ispeed
+    }
+
     // MARK: Operations
 
     /// Updates the file descriptor's `Termios` structure.
     public mutating func update(fd: Int32) -> Result<(), ErrNo> {
         return try(tcsetattr(fd, TCSANOW, &raw))
+    }
+
+    /// Set the input speed.
+    public mutating func setInputSpeed(baud: UInt) -> Result<(), ErrNo> {
+        return try(cfsetispeed(&raw, baud))
+    }
+
+    /// Set the output speed.
+    public mutating func setOutputSpeed(baud: UInt) -> Result<(), ErrNo> {
+        return try(cfsetospeed(&raw, baud))
+    }
+
+    /// Set both input and output speed.
+    public mutating func setSpeed(baud: UInt) -> Result<(), ErrNo> {
+        return try(cfsetspeed(&raw, baud))
     }
 
     // MARK: Private

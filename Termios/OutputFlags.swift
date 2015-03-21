@@ -27,4 +27,9 @@ public struct OutputFlags : RawOptionSetType {
     public static var allZeros: OutputFlags {
         return self(0)
     }
+
+    public static var OPOST  : OutputFlags { return self(Darwin.OPOST)  }
+    public static var ONLCR  : OutputFlags { return self(Darwin.ONLCR)  }
+    public static var OXTABS : OutputFlags { return self(Darwin.OXTABS) }
+    public static var ONOEOT : OutputFlags { return self(Darwin.ONOEOT) }
 }

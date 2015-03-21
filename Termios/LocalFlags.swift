@@ -10,22 +10,18 @@ import Darwin.POSIX.termios
 
 /// Local flag values in a `termios` structure.
 public struct LocalFlags : RawOptionSetType {
-    private var value: UInt = 0
+    public var rawValue: UInt
 
     public init(_ value: UInt) {
-        self.value = value
+        rawValue = value
     }
 
     public init(rawValue value: UInt) {
-        self.value = value
+        rawValue = value
     }
 
     public init(nilLiteral: ()) {
-        self.value = 0
-    }
-
-    public var rawValue: UInt {
-        return value
+        rawValue = 0
     }
 
     public static var allZeros: LocalFlags {

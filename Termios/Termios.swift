@@ -12,7 +12,7 @@ public final class Termios {
     private var original = termios()
     private var raw = termios()
 
-    init () {
+    public init () {
         tcgetattr(STDIN_FILENO, &original)
         cfmakeraw(&raw)
         tcsetattr(STDIN_FILENO, TCSANOW, &raw)

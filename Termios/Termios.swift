@@ -10,17 +10,18 @@ import Darwin.POSIX.termios
 
 /// Swift wrapper around the raw C `termios` structure.
 public struct Termios {
+    // MARK: Constructors
 
-    /// Creates a wrapper around `stdout`.
+    /// Constructs an empty `Termios` structure.
     public init() {
-        self.init(fd: STDOUT_FILENO)
     }
 
-    /// Creates a wrapper around the given file descriptor.
+    /// Constructs a `Termios` structure from a given file descriptor `fd`.
     public init(fd: Int32) {
-        self.fd = fd
         tcgetattr(fd, &termios)
     }
+
+    // MARK: Properties
 
     /// Input flags
     public var inputFlags: InputFlags {
@@ -46,10 +47,15 @@ public struct Termios {
         set { termios.c_lflag = newValue.rawValue }
     }
 
+    // MARK: Operations
+
+    /// Updates the file descriptor's `Termios` structure.
+    public mutating func update(fd: Int32) {
+        tcsetattr(fd, TCSANOW, &termios)
+    }
+
+    // MARK: Private
+
     /// The wrapped termios struct.
     private var termios = Darwin.termios()
-
-    /// The corresponding file descriptor.
-    private let fd: Int32
-
 }

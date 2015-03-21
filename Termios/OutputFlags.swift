@@ -16,25 +16,19 @@ public struct OutputFlags : RawOptionSetType {
         self.value = value
     }
 
-    // MARK: RawRepresentable
-
     public init(rawValue value: UInt) {
         self.value = value
+    }
+
+    public init(nilLiteral: ()) {
+        self.value = 0
     }
 
     public var rawValue: UInt {
         return value
     }
 
-    // MARK: BitwiseOperationsType
-
     public static var allZeros: OutputFlags {
         return self(0)
-    }
-
-    // MARK: NilLiteralConvertible
-
-    public init(nilLiteral: ()) {
-        self.value = 0
     }
 }

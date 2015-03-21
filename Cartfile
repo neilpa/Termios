@@ -1,1 +1,2 @@
 github "LlamaKit/Llamakit" ~> 0.6
+github "neilpa/ErrNo" ~> 0.0.1

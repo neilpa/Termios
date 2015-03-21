@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Termios.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/ErrNo/ErrNo.xcodeproj">
+   </FileRef>
 </Workspace>

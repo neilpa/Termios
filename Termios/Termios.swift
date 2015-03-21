@@ -24,7 +24,7 @@ public struct Termios {
         var raw = termios()
         switch(tcgetattr(fd, &raw)) {
             case 0:  return success(Termios(raw))
-            default: return failure(ErrNo(rawValue: errno)!)
+            default: return failure(ErrNo.last!)
         }
     }
 
@@ -58,10 +58,7 @@ public struct Termios {
 
     /// Updates the file descriptor's `Termios` structure.
     public mutating func update(fd: Int32) -> Result<(), ErrNo> {
-        switch tcsetattr(fd, TCSANOW, &raw) {
-            case 0: return success(())
-            default: return failure(ErrNo(rawValue: errno)!)
-        }
+        return try(tcsetattr(fd, TCSANOW, &raw))
     }
 
     // MARK: Private

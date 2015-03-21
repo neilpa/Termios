@@ -28,8 +28,15 @@ public struct OutputFlags : RawOptionSetType {
         return self(0)
     }
 
-    public static var OPOST  : OutputFlags { return self(Darwin.OPOST)  }
-    public static var ONLCR  : OutputFlags { return self(Darwin.ONLCR)  }
-    public static var OXTABS : OutputFlags { return self(Darwin.OXTABS) }
-    public static var ONOEOT : OutputFlags { return self(Darwin.ONOEOT) }
+    /// enable following output processing
+    public static var OPOST: OutputFlags { return self(Darwin.OPOST) }
+
+    /// map NL to CR-NL (ala CRMOD)
+    public static var ONLCR: OutputFlags { return self(Darwin.ONLCR) }
+
+    /// expand tabs to spaces
+    public static var OXTABS: OutputFlags { return self(Darwin.OXTABS) }
+
+    /// discard EOT's (^D) on output)
+    public static var ONOEOT: OutputFlags { return self(Darwin.ONOEOT) }
 }

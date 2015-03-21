@@ -22,10 +22,7 @@ public struct Termios {
     /// Constructs a `Termios` structure from a given file descriptor `fd`.
     public static func fetch(fd: Int32) -> Result<Termios, ErrNo> {
         var raw = termios()
-        switch(tcgetattr(fd, &raw)) {
-            case 0:  return success(Termios(raw))
-            default: return failure(ErrNo.last!)
-        }
+        return tryMap(tcgetattr(fd, &raw)) { _ in Termios(raw) }
     }
 
     // MARK: Properties

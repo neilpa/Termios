@@ -10,6 +10,7 @@
 		D8B4C5701ABD15DE00901386 /* Termios.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B4C56F1ABD15DE00901386 /* Termios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B4C57B1ABD15DE00901386 /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
 		D8B4C5821ABD15DE00901386 /* TermiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4C5811ABD15DE00901386 /* TermiosTests.swift */; };
+		D8B4C58C1ABD16AC00901386 /* Termios.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4C58B1ABD16AC00901386 /* Termios.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D8B4C57A1ABD15DE00901386 /* TermiosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TermiosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4C5801ABD15DE00901386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B4C5811ABD15DE00901386 /* TermiosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermiosTests.swift; sourceTree = "<group>"; };
+		D8B4C58B1ABD16AC00901386 /* Termios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Termios.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B4C56F1ABD15DE00901386 /* Termios.h */,
+				D8B4C58B1ABD16AC00901386 /* Termios.swift */,
 				D8B4C56D1ABD15DE00901386 /* Supporting Files */,
 			);
 			path = Termios;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B4C58C1ABD16AC00901386 /* Termios.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +322,7 @@
 		D8B4C5861ABD15DE00901386 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -329,12 +334,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D8B4C5871ABD15DE00901386 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -401,6 +408,7 @@
 				D8B4C5871ABD15DE00901386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8B4C5881ABD15DE00901386 /* Build configuration list for PBXNativeTarget "TermiosTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +417,7 @@
 				D8B4C58A1ABD15DE00901386 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

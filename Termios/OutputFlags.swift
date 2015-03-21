@@ -10,13 +10,13 @@ import Darwin.POSIX.termios
 
 /// Output flag values in a `termios` structure.
 public struct OutputFlags : RawOptionSetType {
-    public var rawValue: Int32
+    public var rawValue: UInt
 
-    public init(_ value: Int32) {
+    public init(_ value: UInt) {
         rawValue = value
     }
 
-    public init(rawValue value: Int32) {
+    public init(rawValue value: UInt) {
         rawValue = value
     }
 
@@ -29,16 +29,16 @@ public struct OutputFlags : RawOptionSetType {
     }
 
     /// enable following output processing
-    public static var OPOST: OutputFlags { return self(Darwin.OPOST) }
+    public static var OPOST: OutputFlags { return self(UInt(Darwin.OPOST)) }
 
     /// map NL to CR-NL (ala CRMOD)
-    public static var ONLCR: OutputFlags { return self(Darwin.ONLCR) }
+    public static var ONLCR: OutputFlags { return self(UInt(Darwin.ONLCR)) }
 
     /// expand tabs to spaces
-    public static var OXTABS: OutputFlags { return self(Darwin.OXTABS) }
+    public static var OXTABS: OutputFlags { return self(UInt(Darwin.OXTABS)) }
 
     /// discard EOT's (^D) on output)
-    public static var ONOEOT: OutputFlags { return self(Darwin.ONOEOT) }
+    public static var ONOEOT: OutputFlags { return self(UInt(Darwin.ONOEOT)) }
 
     // TODO Should these be included?
     //

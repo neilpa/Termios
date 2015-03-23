@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Carthage/Checkouts/ErrNo/ErrNo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Llamakit/LlamaKit.xcodeproj">
+   </FileRef>
 </Workspace>

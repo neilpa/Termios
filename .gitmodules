@@ -11,4 +11,5 @@
 	path = Carthage/Checkouts/Prelude
 	url = https://github.com/robrix/Prelude.git
 [submodule "Carthage/Checkouts/ErrNo"]
+	path = Carthage/Checkouts/ErrNo
 	url = https://github.com/neilpa/ErrNo.git

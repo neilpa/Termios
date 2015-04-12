@@ -19,7 +19,6 @@
 		D86D5E581ABD371F00CA574D /* OutputFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E571ABD371F00CA574D /* OutputFlags.swift */; };
 		D86D5E5A1ABD372600CA574D /* LocalFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E591ABD372600CA574D /* LocalFlags.swift */; };
 		D86D5E5C1ABD372D00CA574D /* ControlFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D5E5B1ABD372D00CA574D /* ControlFlags.swift */; };
-		D89508931ABE0A1800B0BAAA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89508911ABE0A0900B0BAAA /* LlamaKit.framework */; };
 		D89508941ABE0A1C00B0BAAA /* LlamaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D89508911ABE0A0900B0BAAA /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8B4C5701ABD15DE00901386 /* Termios.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B4C56F1ABD15DE00901386 /* Termios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B4C57B1ABD15DE00901386 /* Termios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B4C56A1ABD15DE00901386 /* Termios.framework */; };
@@ -104,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89508931ABE0A1800B0BAAA /* LlamaKit.framework in Frameworks */,
 				D8531EDB1ABE17A100C0A8A1 /* ErrNo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import Darwin.POSIX.termios
 import ErrNo
-import LlamaKit
+import Result
 
 /// Swift wrapper around the raw C `termios` structure.
 public struct Termios {
